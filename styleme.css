@@ -8,6 +8,14 @@ body{
 a {color:red; text-decoration:none;}
 a:hover{text-decoration:underline}
 span{color:yellow;}
+ol {
+    display: flex;
+    flex-direction: column-reverse;
+}
+span{color:yellow;}
+span{color:yellow;}
+span{color:yellow;}
+a{color:red;}
 
 
 
