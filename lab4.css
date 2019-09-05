@@ -32,9 +32,11 @@
 }
 .Button{
     background-color:gainsboro;
-    padding-left:70%;
+  
+    padding-left:50%;
     padding-top:10px;
     padding-bottom:10px;
+
 
 }
 label span{
