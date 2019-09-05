@@ -1,0 +1,42 @@
+﻿body {
+    background-color: aqua;
+    padding: 10px
+}
+.Column{
+    display:inline-block;
+    vertical-align:top;
+    width:45%;
+}
+.underlined{
+    text-decoration:underline;
+}
+.Column label {
+    display: inline-block;
+    width: 200px;
+}
+.title{
+    background-color:blue;
+    display:inline-block;
+    width:100%;
+}
+.content{
+    width:80%;
+    margin-left:10%;
+    background-color:white;
+}
+.icon {
+    display: inline-block;
+}
+.option{
+    display:inline-block;
+}
+.Button{
+    background-color:gainsboro;
+    padding-left:70%;
+    padding-top:10px;
+    padding-bottom:10px;
+
+}
+label span{
+    color:red;
+}
