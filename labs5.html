@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <p>Right Click to inspect elements in the consule</p>
+
+
+    <script>
+
+
+function myFunctionTest(expected, function2test) {
+    let result = function2test();
+
+    if (Array.isArray(expected)) {
+        expected = expected.toString();
+    }
+    if (Array.isArray(result)) {
+        result = result.toString();
+    }
+    if (expected === result) {
+        return "TEST SUCCEEDED";
+    } else {
+        return "TEST FAILED.  Expected " + expected + " found " + function2test();
+    }
+}
+
+//FIND MAX RETRN LARGEST
+function max(firstNumber, secondNumber) {
+    return firstNumber > secondNumber ? firstNumber : secondNumber;
+}
+
+//2 CAASE TEST.
+console.log("Expected output of max() is 13  " + myFunctionTest(13, function () {
+    return max(1, 13);
+}));
+
+//3 MAX OF THREE.
+function maxOfThree(firstNumber, secondNumber, thirdNumber) {
+    let temporary = (firstNumber > secondNumber ? firstNumber : secondNumber);
+    return temporary > thirdNumber ? temporary : thirdNumber;
+}
+
+//3 TEST CASE.
+console.log("Expected output of maxOfThree() is 13  " + myFunctionTest(13, function () {
+    return maxOfThree(1, 13, 4);
+}));
+
+//4 VOULE.
+function isVowel(character) {
+    if (character.length > 1) return false;
+    else {
+        let upperCaseCharacter = character.toUpperCase();
+        let vowels = ["A", "E", "I", "O", "U"];
+        if (vowels.includes(upperCaseCharacter)) return true;
+    }
+    return false;
+}
+
+//4 TEST CASE.
+console.log("Expected output of isVowel() is true  " + myFunctionTest(true, function () {
+    return isVowel('e');
+}));
+
+
+//5 SUM
+function sum(numbers) {
+    let sum = numbers.reduce(function (currentNumber, previousNumber) {
+        return currentNumber + previousNumber;
+    });
+    return sum;
+}
+
+//5 SUM TEST CASE
+console.log("Expected output of sum() is 10  " + myFunctionTest(10, function () {
+    let nums = [1, 2, 3, 4];
+    return sum(nums);
+}));
+
+//5  MULTIPLE
+function multiply(numbers) {
+    let product = numbers.reduce(function (currentNumber, previousNumber) {
+        return currentNumber * previousNumber;
+    });
+    return product;
+}
+
+//5 MULTIPLE TEST CASE.
+console.log("Expected output of multiply() is 24  " + myFunctionTest(24, function () {
+    let nums = [1, 2, 3, 4];
+    return multiply(nums);
+}));
+
+//6 REVERS WORD.
+function reverse(word) {
+    let reversedWord = [];
+    for (let i = 0; i < word.length; i++) {
+        reversedWord.unshift(word.charAt(i));
+    }
+    return reversedWord.join('');
+}
+
+//6 TEST CASE.
+console.log("Expected output of reverse() is hsaniz  " + myFunctionTest("hsaniz", function () {
+    return reverse("zinash");
+}));
+
+
+//7 LONG WORDS
+function findLongestWord(words) {
+    let longestWord = 0;
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].length > longestWord) {
+            longestWord = words[i].length;
+        }
+    }
+    return longestWord;
+}
+
+//7 TEST CASE.
+console.log("Expected output of findLongestWord() is 10  " + myFunctionTest(6, function () {
+    let words = ["a", "zinash", "negga", "b"];
+    return findLongestWord(words);
+}));
+
+//8 FILTER LONG WORDS.
+function filterLongWords(words, i) {
+    let wordsGreaterThanI = [];
+    for (let j = 0; j < words.length; j++) {
+        if (words[j].length > i) {
+            wordsGreaterThanI.push(words[j]);
+        }
+    }
+    return wordsGreaterThanI;
+}
+
+//8 TEST CASES.
+let longWords = ["kidist", "negga"];
+console.log("Expected output of filterLongWords() is [kidist, negga]  " + myFunctionTest(longWords, function () {
+    let words = ["a", "kidist", "negga", "b"];
+    return filterLongWords(words, 3);
+}));
+
+
+//MODIFY THE JS
+const a = [1, 3, 5, 3, 3];
+
+//9A MULTIPLE EACH ELEMENT BY 10.
+function question9A(numbers) {
+    return a.map(function (elem, i, array) {
+        return elem * 10;
+    });
+}
+
+
+//9A TEST CASE.
+const ans1 = [10, 30, 50, 30, 30];
+console.log("Expected output of question 9 a is [10,30,50,30,30]  " + myFunctionTest(ans1, function () {
+    return question9A(a);
+}));
+
+//9B RETURN ARRAY
+function question9B(numbers) {
+    return a.filter(function (elem, i, array) {
+        return elem === 3;
+    });
+}
+
+//9B TEST CASE.
+const ans2 = [3, 3, 3];
+console.log("Expected output of question 9 b is [3,3,3]  " + myFunctionTest(ans2, function () {
+    return question9B(a);
+}));
+
+//9C RETURN PRODUCT OF ALL ELEMENT.
+function question9C(numbers) {
+    return a.reduce(function (prevValue, elem, i, array) {
+        return prevValue * elem;
+    });
+}
+
+
+//9C TEST CASE.
+console.log("Expected output of question 9 c is 135  " + myFunctionTest(135, function () {
+    return question9C(a);
+}));
+
+
+
+    </script>
+
+</body>
+</html>
