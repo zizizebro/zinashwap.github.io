@@ -16,7 +16,7 @@
 }
 
 .banner > h1{
-    background-color: rgb(245, 153, 153);
+    background-color: hotpink;
     color: white;
     font-size: 2em;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -46,7 +46,7 @@ section > .summary{
 }
 
 #zen-supporting{
-    background-color: wheat;
+    background-color: blue;
     width: 70%;
     box-sizing: border-box;
     padding: 10px;
@@ -99,7 +99,7 @@ section .preamble{
     font-style: italic;
 }
 #zen-supporting > .benefits{
-    background-color: chocolate;
+    background-color: aqua;
     float: right;
     width: 40%;
     clear: left;
@@ -108,7 +108,7 @@ section .preamble{
 }
 
 #zen-supporting > .explanation{
-    background-color: aqua;
+    background-color: yellow;
     float: left;
     width: 40%;
     margin: 20px;
