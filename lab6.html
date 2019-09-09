@@ -5,13 +5,80 @@
 	<title>TEXT DECORATOR</title>
 	<link href="css/decorate.css" type="text/css" rel="stylesheet" />
 	<script src="javascript/decoratemytext.js"></script>
-        <!-- link href="decoratemytext.css" src="decorated.gif"-- >
+   <!---- link href="decoratemytext.css" src="decorated.gif"-- >
+
 
 	<!-- link to your script file here -->
 
 </head>
 
 <body>
+    <script>
+        
+//Class to handle all the events
+function eventHandler() {
+    let decoraionsButton = document.getElementById("digger_decorations");
+    let stopDecoraions = document.getElementById("stop_decorations");
+    // decoraionsButton.onclick = printHello;
+    // decoraionsButton.onclick = changeFontSize;
+    // decoraionsButton.onclick = changeFontSizeBy2;
+    decoraionsButton.onclick = changeFontSizeBy2WithTimer;
+    stopDecoraions.onclick = stopTimer;
+
+    let decorationsCheckBox = document.getElementById("bling");
+    decorationsCheckBox.onchange = changeStyles;
+
+}
+
+
+function printHello() {
+    alert("Hello World");
+}
+
+
+function changeFontSize() {
+    let textArea = document.getElementById("textspace");
+    textArea.style.fontSize = "24pt";
+}
+
+
+function changeStyles() {
+    let textArea = document.getElementById("textspace");
+    let outerDiv = document.getElementById("outerclass");
+    let controls = document.getElementById("decoration");
+    let currentClass = textArea.className;
+    if (currentClass === "textspace") {
+        textArea.className = "modifiedtextspace";
+        outerDiv.className = "newbodyclass";
+        controls.className = "controlsNew";
+    } else {
+        textArea.className = "textspace";
+        outerDiv.className = "outerclass";
+        controls.className = "decorations";
+    }
+    alert("Modify page?");
+}
+
+
+function changeFontSizeBy2() {
+    let textArea = document.getElementById("textspace");
+    let currentFontSize = window.getComputedStyle(textArea).fontSize;
+    textArea.style.fontSize = (Math.ceil((parseInt(currentFontSize)) * 1) + 2 + "pt");
+}
+
+let timer = null;
+function changeFontSizeBy2WithTimer() {
+    timer = setInterval(changeFontSizeBy2, 500);
+}
+
+
+function stopTimer() {
+    clearInterval(timer);
+}
+
+window.onload = eventHandler;
+
+    </script>
 	<div id="outerclass">
 
 
