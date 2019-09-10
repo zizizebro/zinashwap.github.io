@@ -53,11 +53,14 @@ function incrementI() {
 function speedIncrement() {
     console.log(timerSpeed);
     if (timerSpeed == 250) {
+
         timerSpeed = 50;
+        window.clearInterval(timer);
         animationsFunction();
     }
     else {
         timerSpeed = 250;
+        window.clearInterval(timer);
         animationsFunction();
     }
 }
