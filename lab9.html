@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="javascript/lab9javascript.js" type="text/javascript"></script>
+    <link href="css/lab9.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <form class="booking" id="booking">
+        <p id="errors">
+
+        </p>
+        <p>
+            <label for="name">Name </label>
+            <input id="name" class="name" type="text" pattern="[A-Za-z\s]+"
+                   title="A name must have atleast one letter of aplhabet">
+        </p>
+        <p>
+            <label for="street">Street</label>
+            <input id="street" class="street" type="text">
+        </p>
+        <label for="state">State</label>
+        <select id="state" class="state">
+            <option selected>Select One </option>
+            <option value="iowa">IOWA</option>
+            <option value="california">California</option>
+            <option value="illinois">Illinois</option>
+        </select>
+
+        <p>
+            <label for="zip">Zip Code</label>
+            <input id="zip" class="zip" pattern="\d{5}" title="Zip code must be 5 digits only">
+        </p>
+        <p>
+            <label for="seats">How many seats?</label>
+            <input id="seats" class="seats">
+        </p>
+
+        <fieldset>
+            <legend>Which taxi do you require?</legend>
+            <p>
+            <p><input id="taxi" class="taxi" type="radio" value="car">Car</p>
+            <p><input id="taxi" class="taxi" type="radio" value="van">Van</p>
+            <p><input id="taxi" class="taxi" type="radio" value="tuktuk">Tuk Tuk</p>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend> Extras</legend>
+            <p><input id="extra" class="extra" type="checkbox" value="babySeat">Baby Seat</p>
+            <p><input id="extra" class="extra" type="checkbox" value="wheelChair">Wheelchair Access</p>
+            <p><input id="extra" class="extra" type="checkbox" value="stockTip">Stock Tip</p>
+        </fieldset>
+        <p>
+            <label for="specialInstructions">Special Instructions</label>
+            <textarea id="specialInstructions" class="specialInstructions" rows="2" cols="40"></textarea>
+        </p>
+        <input id="submissionBtn" type="submit" value="Submit Booking">
+    </form>
+
+</body>
+</html>
